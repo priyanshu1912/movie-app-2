@@ -3,6 +3,7 @@ import styles from './SearchPage.module.css'
 import {useSearchParams} from 'react-router-dom'
 import axios from 'axios'
 import SwiperWindow from '../swiper/SwiperWindow'
+import LoaderComp from '../loader/LoaderComp'
 
 function SearchPage() {
   const [data,setData] = useState(null)
@@ -44,18 +45,17 @@ function SearchPage() {
   
   return (
     <div className={styles.search}>
-      <div className={styles.container}>
-        {
-          data &&
+      {
+        data ?
+        <div className={styles.container}>
           <div className={styles.heading}>
             {data.length} search results
           </div>
-        }
-        {
-          data &&
           <SwiperWindow data={data}/>
-        }
-      </div>
+        </div>
+        :
+        <LoaderComp/>
+      }
     </div>
   )
 }

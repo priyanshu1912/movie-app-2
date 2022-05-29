@@ -4,6 +4,7 @@ import {useSearchParams} from 'react-router-dom'
 import axios from 'axios'
 import {AiOutlineClockCircle,AiOutlineCalendar,AiOutlineStar} from 'react-icons/ai'
 import VideoPlayer from '../videoPlayer/VideoPlayer'
+import LoaderComp from '../loader/LoaderComp'
 
 function OpenMovie() {
     const [params] = useSearchParams()
@@ -32,7 +33,7 @@ function OpenMovie() {
   return (
     <>
     {
-        data &&
+        data ?
         <div style={{
             width:'100%',
             height:'100vh',
@@ -72,10 +73,12 @@ function OpenMovie() {
                 </div>
             </div>
         </div>
+        :
+        <LoaderComp/>
     }
-    <div className={styles.main}>
+    {/* <div className={styles.main}>
         
-    </div>
+    </div> */}
     </>
   )
 }

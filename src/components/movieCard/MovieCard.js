@@ -3,6 +3,8 @@ import styles from './MovieCard.module.css'
 import {AiOutlineStar} from 'react-icons/ai'
 import {BsFillPlayCircleFill} from 'react-icons/bs'
 import {useNavigate,createSearchParams} from 'react-router-dom'
+import Skeleton,{SkeletonTheme} from 'react-loading-skeleton'
+import 'react-loading-skeleton/dist/skeleton.css'
 
 function MovieCard({item}) {
   const navigate = useNavigate()
@@ -15,8 +17,15 @@ function MovieCard({item}) {
   }
   return (
     <div className={styles.card} onClick={()=>handleClick(item.id)}>
+      {
+        item.poster_path ?
         <img src={`https://image.tmdb.org/t/p/w500/${item.poster_path}`} alt="poster" 
         className={styles.poster}/>
+        :
+        <SkeletonTheme baseColor="#202020" highlightColor="#444">
+          <Skeleton height={250}/>
+        </SkeletonTheme>
+      } 
 
         <div className={styles.hover}>
           <div className={styles.title}>
