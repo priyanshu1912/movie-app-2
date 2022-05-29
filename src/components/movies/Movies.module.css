@@ -1,0 +1,21 @@
+.container {
+    width: 90%;
+    margin: auto;
+    margin-bottom: 40px;
+}
+
+.title {
+    font-size: 35px;
+    line-height: 1.1;
+}
+
+.boldTitle {
+    font-weight: bold;
+}
+
+.featured {
+    color: red;
+    font-size: 15px;
+    font-weight: bold;
+    letter-spacing: 4px;
+}

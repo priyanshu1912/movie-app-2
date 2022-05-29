@@ -1,0 +1,17 @@
+.search {
+    width: 100%;
+    min-height: 100vh;
+    background-color: black;
+}
+
+.container {
+    width: 90%;
+    margin: auto;
+    padding-top: 75px;
+}
+
+.heading {
+    color: white;
+    font-size: 30px;
+    line-height: 1.1;
+}
